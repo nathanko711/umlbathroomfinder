@@ -92,6 +92,7 @@ function setupPage() {
    var staticFloor = "Olsen 3F Men's";
    var numStars = 1.5;
    
+$('#logo').attr({ src: "<%= asset_path('logo.png') %>" });
    $('#imageContainer').append('<img src="' + staticImg 
                               +'" class="img-rounded center-block img-responsive" alt="bathroom" width="460" height="345">')
    
