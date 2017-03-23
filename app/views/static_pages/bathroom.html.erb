@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--    <link rel="icon" href="../../favicon.ico">-->
+
+    <title>UML Bathroom Finder</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="css/reviews.css">
+    
+    <!-- rateit CSS -->
+    <link rel="stylesheet" href="css/rateit.css">
+      
+    <!-- Selection CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UML Bathroom Finder</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">          
+            <form class="navbar-form navbar-right">
+              <select class="selectpicker" title="Campus" id="campus" name="campus">
+                <option value="north">North</option>
+                <option value="south">South</option>
+            </select>
+              <select class="selectpicker" title="Building" id="building" name="building">
+                <option class="north">Emerging Technologies &amp; Innovation Center</option>
+                <option class="north">Alumni Library</option>
+                <option class="north">Lydon Library</option>
+                <option class="north">Eames Hall</option>
+                <option class="north">Cumnock Hall</option>
+                <option class="north">Southwick Hall</option>
+                <option class="north">Pasteur Hall</option>
+                <option class="north">Kitson Hall</option>
+                <option class="north">Ball Hall</option>
+                <option class="north">Olsen Hall</option>
+                <option class="north">Falmouth Hall</option>
+                <option class="north">Engineering Building</option>
+                <option class="north">Olney Hall</option>
+                <option class="north">Pinanski Hall</option>
+                <option class="north">Costello Gym</option>
+                <option class="south">Durgin Hall</option>
+                <option class="south">Health and Social Sciences Building</option>
+                <option class="south">O’Leary Library</option>
+                <option class="south">McGauvran Student Union</option>
+                <option class="south">Concordia Hall</option>
+                <option class="south">Weed Hall</option>
+                <option class="south">South Side Cafe/Dining Hall</option>
+                <option class="south">Coburn Hall</option>
+                <option class="south">Sheehy Hall</option>
+                <option class="south">Allen House</option>
+                <option class="south">Dugan Hall</option>
+                <option class="south">Mahoney Hall</option>
+            </select>
+              <select class="selectpicker" title="Floor" id="floor" name="floor">
+                  <option>1F</option>
+                  <option>2F</option>
+                  <option>3F</option>
+                  <option>4F</option>
+                  <option>5F</option>
+                  <option>6F</option>
+            </select>                
+              <button type="submit" class="btn btn-success">
+                  Find
+              </button>              
+            </form>
+
+       
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+   <div class="container" id="reviewHeader">
+      <div class="col-sm-12"></div>
+      <div class="row center-block">
+         <div class="col-sm-6">
+         </div>
+         <div class="col-sm-6 text-right"></div>
+      </div>
+   </div>
+   <div class="container" id="imageContainer"></div>
+   <div class="container" id="formContainer">
+      <div class="row" >
+            <div class="col-md-10 col-md-offset-1">
+               <form action="" id="review_form" class="form-horizontal">
+                  <div class="form-group">
+                     <label for="your_rating" class="col-sm-2 control-label">Your Rating:</label><br>
+                     <div class="col-sm-10">
+                        <input class="form-control" type="hidden" id="input1" value="0" name="input1">
+                     </div>
+                     <div id="your_rating_div" class="col-sm-10"></div>
+                  </div>
+                  <div class="form-group">
+                     <label for="title" class="col-sm-2 control-label">Title:</label>
+                     <div class="col-sm-10" id="input2_div">
+                        <input type="text" class="form-control" id="input2" placeholder="Enter title ..." name="input2">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="write_review" class="col-sm-2 control-label">Review:</label>
+                     <div class="col-sm-10" id="input3_div">
+                        <textarea class="form-control" name="input3" cols="40" rows="5" id="input3" placeholder="Write a review ..."></textarea>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="submit_button" class="col-sm-2 control-label"></label>
+                     <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" id="submitButton">Submit Review</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+      </div>
+   </div>
+   <div class="container" id="reviewsContainer"></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+    <script src="js/jquery.chained.min.js"></script>
+    <script src="js/custom_chain.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    
+    <script src="js/jquery.rateit.min.js"></script>
+    
+    <script src="js/reviews.js"></script>
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+  </body>
+</html>

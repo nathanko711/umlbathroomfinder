@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--    <link rel="icon" href="../../favicon.ico">-->
+
+    <title>UML Bathroom Finder</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <%= render 'layouts/shim' %>
+      
+    <!-- Selection CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+	
+    <!-- Custom styles Chuong Vu -->	
+	  <link href="css/Chuong.css" rel="stylesheet">
+
+	
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+
+    <div class="container">
+
+    	<!-- Main component -->
+    	<div class="jumbotron">
+		
+			<!-- For Map View -->
+			<div class="text-center">
+			<%= link_to image_tag("Floors/Olsen/1st.png", class: "img-responsive", usemap: "olsen1stfloor") %>
+				
+				<map name="olsen1stfloor">
+					<area target="_blank" alt="Womens" title="Womens" href="reviews.html" coords="1263,338,1437,691" shape="rect">
+					<area target="_blank" alt="Mens" title="Mens" href="reviews.html" coords="1452,350,1452,681,1657,685,1648,338" shape="poly">
+					<area target="_blank" alt="WomenSingle" title="WomenSingle" href="reviews.html" coords="2323,792,2420,912" shape="rect">
+					<area target="_blank" alt="MenSingle" title="MenSingle" href="reviews.html" coords="2433,792,2534,918" shape="rect">
+					<area target="_blank" alt="Single" title="Single" href="reviews.html" coords="2316,928,2537,1032" shape="rect">
+				</map>
+			</div>
+			
+			<!-- RATING -->
+			<table class="table table-bordered">
+				<tr>
+        			<th class="bg-info text-center" colspan="2">
+        				RATING
+        			</th>
+        		</tr>
+				<tr>
+					<td class="col-sm-6"><u>MEN'S BATHROOM</u>
+						<ul>
+							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI: 
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
+								(4/5)
+							</li>
+							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE: 
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
+								(5/5)
+							</li>
+						</ul>
+					</td>
+					<td><u>WOMEN'S BATHROOM</u>
+						<ul>
+							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI:
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
+								(4/5)
+							</li>
+							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE:
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
+								(5/5)
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+        			<th class="bg-danger text-center" colspan="2">
+        				STATISTIC
+        			</th>
+        		</tr>
+        		
+        	</table>
+			
+			
+		
+    	</div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.rwdImageMaps.min.js"></script>
+    <script src="js/jquery.chained.min.js"></script>
+    <script src="js/custom_chain.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+	<script src="js/Chuong.js"></script>
+	 
+  </body>
+</html>

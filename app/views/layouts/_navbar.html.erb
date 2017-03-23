@@ -1,0 +1,70 @@
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UML Bathroom Finder</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">          
+            <form class="navbar-form navbar-right">
+
+              <select id="selectpicker1" class="selectpicker" title="Campus" id="campus" name="campus">
+                <option value="north">North</option>
+                <option value="south">South</option>
+            </select>
+                
+              <select id="selectpicker2" class="selectpicker" title="Building" id="building" name="building">
+                  <optgroup label="North Campus">
+                <option class="north" value="EmergingTechnologies">Emerging Technologies &amp; Innovation Center</option>
+                <option class="north" value="Alumni">Alumni Library</option>
+                <option class="north" value="Lydon">Lydon Library</option>
+                <option class="north" value="Eames">Eames Hall</option>
+                <option class="north" value="Cumnock">Cumnock Hall</option>
+                <option class="north" value="Southwick">Southwick Hall</option>
+                <option class="north" value="Pasteur">Pasteur Hall</option>
+                <option class="north" value="Kitson">Kitson Hall</option>
+                <option class="north" value="Ball">Ball Hall</option>
+                <option class="north" value="Olsen">Olsen Hall</option>
+                <option class="north" value="Falmouth">Falmouth Hall</option>
+                <option class="north" value="Engineering">Engineering Building</option>
+                <option class="north" value="Olney">Olney Hall</option>
+                <option class="north" value="Pinanski">Pinanski Hall</option>
+                <option class="north" value="Costello">Costello Gym</option>
+                      </optgroup>
+                  <optgroup label="South Campus">
+                <option class="south" value="Durgin">Durgin Hall</option>
+                <option class="south" value="Health">Health and Social Sciences Building</option>
+                <option class="south" value="OLeary">O’Leary Library</option>
+                <option class="south" value="McGauvran">McGauvran Student Union</option>
+                <option class="south" value="Concordia">Concordia Hall</option>
+                <option class="south" value="Weed">Weed Hall</option>
+                <option class="south" value="South">South Side Cafe/Dining Hall</option>
+                <option class="south" value="Coburn">Coburn Hall</option>
+                <option class="south" value="Sheehy">Sheehy Hall</option>
+                <option class="south" value="Allen">Allen House</option>
+                <option class="south" value="Dugan">Dugan Hall</option>
+                <option class="south" value="Mahoney">Mahoney Hall</option>
+                      </optgroup>
+            </select>
+              <select id="selectpicker3" class="selectpicker" title="Floor" id="floor" name="floor">
+                  <option value="1F">1F</option>
+                  <option value="2F">2F</option>
+                  <option value="3F">3F</option>
+                  <option value="4F">4F</option>
+                  <option value="5F">5F</option>
+                  <option value="6F">6F</option>
+            </select>                
+              <button type="submit" class="btn btn-success">
+                  Find
+              </button>              
+            </form>
+
+       
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
