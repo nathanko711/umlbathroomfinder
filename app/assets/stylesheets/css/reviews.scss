@@ -1,0 +1,22 @@
+#imageContainer img {
+   border : 8px solid lightGray;
+}
+
+/* changing color of readonly stars */
+#reviewHeader div.bigstars div.rateit-selected
+{
+   
+    background: image-url("star-gold32.png");
+}
+
+#reviewHeader {
+   padding-top : 10px;
+}
+
+/*.container {*/
+/*   padding-bottom : 20px;*/
+/*}*/
+
+#reviewsContainer {
+   padding-top : 30px;
+}

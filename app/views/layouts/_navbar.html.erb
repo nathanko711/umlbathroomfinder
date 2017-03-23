@@ -13,7 +13,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             
-            <li><%= link_to "Log in", signup_path %></li>
+            <li><%= link_to "Sign Up", signup_path %></li>
           </ul>
             <form class="navbar-form navbar-left">
 
@@ -62,10 +62,13 @@
                   <option value="4F">4F</option>
                   <option value="5F">5F</option>
                   <option value="6F">6F</option>
-            </select>                
-              <button type="submit" class="btn btn-success">
-                  Find
-              </button>              
+            </select>          
+            
+            <a><%= link_to "Find", floor_path , class: "btn btn-success"%></a>
+              <!--<a href=></a>-->
+              <!--<button type="submit" class="btn btn-success">-->
+              <!--    Find-->
+              <!--</button>              -->
             </form>
 
        
