@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/signup', to: 'users#new'
+
   get '/bathroom', to: 'static_pages#bathroom'
 
   get '/floor', to: 'static_pages#floor'
