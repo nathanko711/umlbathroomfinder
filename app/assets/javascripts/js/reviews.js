@@ -86,7 +86,9 @@ function isStarSet() {
 function setupPage() {
    // background: image-url("star-red32.png");
    // var staticImg = image-url("OLN_3FM.png");
-   var staticImg ="assets/OLN_3FM.png";
+   // var staticImg = '<%= asset_path("./assets/OLN_3FM.png") %>';
+   // var staticImg = "<%= image-url("OLN_3FM.png")%>";
+   var staticImg = "./assets/OLN_3FM.png";
    var staticFloor = "Olsen 3F Men's";
    var numStars = 1.5;
    
