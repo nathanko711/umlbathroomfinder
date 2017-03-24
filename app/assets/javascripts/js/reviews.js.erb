@@ -90,11 +90,8 @@ function setupPage() {
    var staticFloor = "Olsen 3F Men's";
    var numStars = 1.5;
    
-   // $('#logo').attr({ src: "<%#= asset_path('logo.png') %>" });
-   // <%#= image_tag("OLN_3FM.png") %>
-   // <!--$('#imageContainer').append('<img src="' + staticImg -->
-   console.log("<%= image_url(\"OLN_3FM.png\") %>");
-   // <!--                           +'" class="img-rounded center-block img-responsive" alt="bathroom" width="460" height="345">')-->
+   console.log("<%= image_url("OLN_3FM.png") %>");
+
    $('#imageContainer').append('<img src="' + staticImg + '" class="img-rounded center-block img-responsive" alt="bathroom" width="460" height="345">');                         
    
    $('#reviewHeader .row div:first').text("Avg rating: " + numStars).next().text(staticFloor);
