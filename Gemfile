@@ -10,6 +10,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 gem 'bcrypt',       '3.1.11'
 gem 'jquery-turbolinks'
+gem 'bootstrap-sass', '3.3.6'
 
 
 
