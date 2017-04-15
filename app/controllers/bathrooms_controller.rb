@@ -1,0 +1,2 @@
+class BathroomsController < ApplicationController
+end
