@@ -1,0 +1,16 @@
+<div class="row" style="padding-top: 25px;">
+  <div class="col-sm-1 col-sm-offset-1 rateit rateit-bg">
+     <button id="rateit-reset-2" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-2" style="display: none;"><span></span></button>
+     <div id="rateit-range-2" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-2" aria-valuemin="0" aria-valuemax="5" aria-valuenow="<%= review.rating %>" aria-readonly="true" style="width: 80px; height: 16px;">
+        <div class="rateit-empty"></div>
+        <div class="rateit-selected" style="height: 16px; width: 24px;"></div>
+        <div class="rateit-hover" style="height: 16px;"></div>
+     </div>
+  </div>
+  <div class="col-sm-10">
+     <p><b><%= review.title %></b></p>
+  </div>
+  <div class="col-sm-10 col-sm-offset-1">
+     <p><%= review.content %></p>
+  </div>
+</div>

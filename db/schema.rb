@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414230227) do
+ActiveRecord::Schema.define(version: 20170415002934) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170414230227) do
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "title"
     t.index ["bathroom_id"], name: "index_reviews_on_bathroom_id"
     t.index ["user_id", "created_at", "bathroom_id"], name: "index_reviews_on_user_id_and_created_at_and_bathroom_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
