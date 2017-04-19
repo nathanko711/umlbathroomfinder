@@ -1,0 +1,70 @@
+
+
+    <div class="container">
+
+    	<!-- Main component -->
+    	<div class="jumbotron">
+		
+			<!-- For Map View -->
+			<div class="text-center">
+			<%= image_tag("Floors/Olsen/1st.png", class: "img-responsive", usemap: "#olsen1stfloor") %>
+				
+				<map name="olsen1stfloor">
+					<area alt="Womens" title="Womens" href="bathroom.html" coords="1263,338,1437,691" shape="rect">
+					<area alt="Mens" title="Mens" href="bathroom.html" coords="1452,350,1452,681,1657,685,1648,338" shape="poly">
+					<area alt="WomenSingle" title="WomenSingle" href="bathroom.html" coords="2323,792,2420,912" shape="rect">
+					<area alt="MenSingle" title="MenSingle" href="bathroom.html" coords="2433,792,2534,918" shape="rect">
+					<area alt="Single" title="Single" href="bathroom.html" coords="2316,928,2537,1032" shape="rect">
+				</map>
+			</div>
+			
+			<!-- RATING -->
+			<table class="table table-bordered">
+				<tr>
+        			<th class="bg-info text-center" colspan="2">
+        				RATING
+        			</th>
+        		</tr>
+				<tr>
+					<td class="col-sm-6"><u>MEN'S BATHROOM</u>
+						<ul>
+							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI: 
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
+								(4/5)
+							</li>
+							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE: 
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
+								(5/5)
+							</li>
+						</ul>
+					</td>
+					<td><u>WOMEN'S BATHROOM</u>
+						<ul>
+							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI:
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
+								(4/5)
+							</li>
+							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE:
+								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
+								(5/5)
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+        			<th class="bg-danger text-center" colspan="2">
+        				STATISTIC
+        			</th>
+        		</tr>
+        		
+        	</table>
+			
+			
+		
+    	</div>
+
+    </div> <!-- /container -->
+    
+		<script>
+			$('img[usemap]').rwdImageMaps();
+		</script>

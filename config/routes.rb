@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/floor', to: 'static_pages#floor'
   
   resources :users
+  resources :floors
+  
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
