@@ -12,37 +12,15 @@
       <form class="navbar-form navbar-right">
         <select id="selectpicker2" class="selectpicker" title="Building" id="building" name="building" data-container="body" data-width="100px">
           <optgroup label="North Campus">
-            <option class="north" value="EmergingTechnologies">Emerging Technologies &amp; Innovation Center</option>
-            <option class="north" value="Alumni">Alumni Library</option>
-            <option class="north" value="Lydon">Lydon Library</option>
-            <option class="north" value="Eames">Eames Hall</option>
-            <option class="north" value="Cumnock">Cumnock Hall</option>
-            <option class="north" value="Southwick">Southwick Hall</option>
-            <option class="north" value="Pasteur">Pasteur Hall</option>
-            <option class="north" value="Kitson">Kitson Hall</option>
             <option class="north" value="Ball">Ball Hall</option>
             <option class="north" value="Olsen">Olsen Hall</option>
-            <option class="north" value="Falmouth">Falmouth Hall</option>
-            <option class="north" value="Engineering">Engineering Building</option>
             <option class="north" value="Olney">Olney Hall</option>
-            <option class="north" value="Pinanski">Pinanski Hall</option>
-            <option class="north" value="Costello">Costello Gym</option>
           </optgroup>
           <optgroup label="South Campus">
             <option class="south" value="Durgin">Durgin Hall</option>
             <option class="south" value="Health">Health and Social Sciences Building</option>
-            <option class="south" value="OLeary">O’Leary Library</option>
-            <option class="south" value="McGauvran">McGauvran Student Union</option>
-            <option class="south" value="Concordia">Concordia Hall</option>
-            <option class="south" value="Weed">Weed Hall</option>
-            <option class="south" value="South">South Side Cafe/Dining Hall</option>
-            <option class="south" value="Coburn">Coburn Hall</option>
-            <option class="south" value="Sheehy">Sheehy Hall</option>
-            <option class="south" value="Allen">Allen House</option>
             <option class="south" value="Dugan">Dugan Hall</option>
-            <option class="south" value="Mahoney">Mahoney Hall</option>
           </optgroup>
-          <option class="Unknown" value="Unknown">Unknown</option>
         </select>
         <select id="selectpicker3" class="selectpicker" title="Floor" id="floor" name="floor" data-container="body" data-width="100px">
           <option value="1F">1F</option>
@@ -52,9 +30,9 @@
           <option value="5F">5F</option>
           <option value="6F">6F</option>
         </select>
-        <%= link_to "Find", floor_path , class: "btn btn-success"%>
+        <%= link_to "Go To Building/Floor", floor_path , class: "btn btn-success"%>
         <button type="button" class="btn btn-success" onclick="getLocation()">
-        Find Me
+        Locate My Building (GPS)
         </button> 
       </form>
     </div>
