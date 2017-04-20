@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :floors
+  resources :bathrooms
   
   
   get    '/login',   to: 'sessions#new'

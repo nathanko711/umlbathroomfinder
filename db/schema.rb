@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419230028) do
+ActiveRecord::Schema.define(version: 20170420025135) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.string   "title"
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "coord"
+    t.string   "shape"
+    t.string   "picture"
     t.index ["slug"], name: "index_bathrooms_on_slug", unique: true
   end
 

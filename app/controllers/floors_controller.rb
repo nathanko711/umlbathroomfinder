@@ -19,6 +19,7 @@ class FloorsController < ApplicationController
   
   def edit
     @floor = Floor.friendly.find(params[:id])
+    @bathroom = Bathroom.new
   end
   
   private
