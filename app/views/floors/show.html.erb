@@ -7,7 +7,7 @@
 		
 			<!-- For Map View -->
 			<div class="text-center">
-			<%= image_tag("Floors/Olsen/1st.png", class: "img-responsive", usemap: "#olsen1stfloor") %>
+			<%= image_tag(@floor.picture.url, class: "img-responsive", usemap: "#olsen1stfloor") %>
 				
 				<map name="olsen1stfloor">
 					<area alt="Womens" title="Womens" href="bathroom.html" coords="1263,338,1437,691" shape="rect">
