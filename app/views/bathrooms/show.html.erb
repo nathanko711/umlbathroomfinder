@@ -1,0 +1,54 @@
+<div class="container" id="reviewHeader">
+   <div class="col-sm-12 bigstars rateit rateit-bg" data-rateit-value="<%= @bathroom.reviews.average(:rating) %>" 
+   data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starheight="32" data-rateit-starwidth="32">
+   </div>
+   <div class="row center-block">
+      <div class="col-sm-6">Avg rating: <%= @bathroom.reviews.average(:rating) %></div>
+      <div class="col-sm-6 text-right"><%= @bathroom.title %></div>
+   </div>
+</div>
+
+<div class="container" id="imageContainer">
+  <%= image_tag @bathroom.picture.url, :class => "img-rounded center-block img-responsive", 
+                    :alt => "bathroom", :width => "460", :height => "345" %>
+</div>
+<div class="container" id="formContainer">
+  <div class="row" >
+        <div class="col-md-10 col-md-offset-1">
+           <form action="" id="review_form" class="form-horizontal">
+              <div class="form-group">
+                 <label for="your_rating" class="col-sm-2 control-label">Your Rating:</label><br>
+                 <div class="col-sm-10">
+                    <input class="form-control" type="hidden" id="input1" value="0" name="input1">
+                 </div>
+                 <div id="your_rating_div" class="col-sm-10"></div>
+              </div>
+              <div class="form-group">
+                 <label for="title" class="col-sm-2 control-label">Title:</label>
+                 <div class="col-sm-10" id="input2_div">
+                    <input type="text" class="form-control" id="input2" placeholder="Enter title ..." name="input2">
+                 </div>
+              </div>
+              <div class="form-group">
+                 <label for="write_review" class="col-sm-2 control-label">Review:</label>
+                 <div class="col-sm-10" id="input3_div">
+                    <textarea class="form-control" name="input3" cols="40" rows="5" id="input3" placeholder="Write a review ..."></textarea>
+                 </div>
+              </div>
+              <div class="form-group">
+                 <label for="submit_button" class="col-sm-2 control-label"></label>
+                 <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" id="submitButton">Submit Review</button>
+                 </div>
+              </div>
+           </form>
+        </div>
+  </div>
+</div>
+
+<div class="container" id="reviewsContainer">
+  <% if @bathroom.reviews.any? %>
+    <%= render @reviews %>
+    <%= will_paginate @reviews %>
+  <% end %>
+</div>
