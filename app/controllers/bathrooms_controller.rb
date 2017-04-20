@@ -14,8 +14,7 @@ class BathroomsController < ApplicationController
     if @bathroom.save
       redirect_to @floor
     else
-      #not complete
-      render 'new'
+      redirect_to edit_floor_path(@floor), :flash => { :danger => "Please make sure form is valid" }
     end
   end
   
