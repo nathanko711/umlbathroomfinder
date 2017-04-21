@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] == "bathrooms"
+      session[:forwarding_url] = request.referrer
+    end
   end
 
   def create

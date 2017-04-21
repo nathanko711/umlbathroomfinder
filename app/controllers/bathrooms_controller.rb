@@ -1,4 +1,6 @@
 class BathroomsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :admin_user,     only: [:create, :destroy]
   
   def show
     @bathroom = Bathroom.friendly.find(params[:id])
@@ -14,14 +16,10 @@ class BathroomsController < ApplicationController
     @floor = Floor.find(params[:floor_id])
     @bathroom = @floor.bathrooms.create(bathroom_params)
     if @bathroom.save
-      redirect_to @floor
+      redirect_to request.referrer
     else
-      redirect_to edit_floor_path(@floor), :flash => { :danger => "Please make sure form is valid" }
+      redirect_to request.referrer, :flash => { :danger => "Please make sure form is valid" }
     end
-  end
-  
-  def edit
-    @bathroom = bathroom.friendly.find(params[:id])
   end
   
   private
@@ -29,4 +27,6 @@ class BathroomsController < ApplicationController
     def bathroom_params
       params.require(:bathroom).permit(:title, :picture, :coord, :shape)
     end
+    
+
 end
