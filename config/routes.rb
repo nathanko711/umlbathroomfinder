@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :floors
   resources :bathrooms
+  resources :reviews
   
   
   get    '/login',   to: 'sessions#new'
