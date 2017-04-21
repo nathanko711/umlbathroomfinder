@@ -3,6 +3,7 @@ class BathroomsController < ApplicationController
   def show
     @bathroom = Bathroom.friendly.find(params[:id])
     @reviews = @bathroom.reviews.paginate(page: params[:page])
+    @review = Review.new
   end
   
   def new
