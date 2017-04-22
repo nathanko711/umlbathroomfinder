@@ -2,6 +2,7 @@ class FloorsController < ApplicationController
   before_action :admin_user,     only: [:create, :edit, :update, :destroy]
   def show
     @floor = Floor.friendly.find(params[:id])
+    @bathroom = Bathroom.new
   end
   
   def new
@@ -11,7 +12,7 @@ class FloorsController < ApplicationController
   def create
     @floor = Floor.new(floor_params)
     if @floor.save
-      redirect_to edit_floor_path(@floor)
+      redirect_to @floor
     else
       render 'new'
     end
@@ -19,7 +20,6 @@ class FloorsController < ApplicationController
   
   def edit
     @floor = Floor.friendly.find(params[:id])
-    @bathroom = Bathroom.new
   end
   
   private

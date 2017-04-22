@@ -6,4 +6,5 @@ class Bathroom < ApplicationRecord
   friendly_id :title, use: :slugged
   validates :coord, presence: true
   validates :shape, presence: true
+  validates :gender, presence: true
 end
