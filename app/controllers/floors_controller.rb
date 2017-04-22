@@ -1,5 +1,5 @@
 class FloorsController < ApplicationController
-  
+  before_action :admin_user,     only: [:create, :edit, :update, :destroy]
   def show
     @floor = Floor.friendly.find(params[:id])
   end

@@ -11,6 +11,12 @@ class ReviewsController < ApplicationController
       redirect_to request.referrer, :flash => { :danger => "Please make sure form is valid" }
     end
   end
+  
+  def destroy
+    Review.find(params[:id]).destroy
+    flash[:success] = "Review deleted"
+    redirect_to request.referrer
+  end
 
   private
   
