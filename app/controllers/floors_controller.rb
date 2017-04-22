@@ -25,7 +25,7 @@ class FloorsController < ApplicationController
   private
   
     def floor_params
-      params.require(:floor).permit(:title, :picture)
+      params.require(:floor).permit(:title, :picture, :floor_level, :building, :campus)
     end
 
 end
