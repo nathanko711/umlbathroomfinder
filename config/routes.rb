@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :floors
   resources :bathrooms
   resources :reviews
+  resources :navbar
   
   
   get    '/login',   to: 'sessions#new'
