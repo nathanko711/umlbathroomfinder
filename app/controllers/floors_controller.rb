@@ -1,5 +1,12 @@
 class FloorsController < ApplicationController
   before_action :admin_user,     only: [:create, :edit, :update, :destroy]
+  
+  def index
+    if params[:id]
+      redirect_to floor_path(params[:id]) and return
+    end
+  end
+  
   def show
     @floor = Floor.friendly.find(params[:id])
     @bathroom = Bathroom.new

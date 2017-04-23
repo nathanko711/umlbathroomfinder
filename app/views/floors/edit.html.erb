@@ -2,8 +2,29 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@floor) do |f| %>
       <%= render 'shared/floor_error_messages' %>
+      
+      <%= f.label :campus %>
+      <%= f.select(:campus) do %>
+        <% ['North', 'South'].each do |c| -%>
+          <%= content_tag(:option, c, value:c) %>
+        <% end %>
+      <% end %>
+      
+      <%= f.label :building %>
+      <%= f.select(:building) do %>
+        <% ['ETIC', 'Alumni Library', 'Lydon Library', 'Eames Hall', 'Cumnock Hall', 'Southwick Hall', 'Pasteur Hall', 'Kitson Hall', 'Ball Hall', 'Olsen Hall', 'Falmouth Hall', 'Engineering Building', 'Olney Hall', 'Pinanski Hall', 'Costello Gym', 'Durgin Hall', 'Health and Social Sciences Building', 'O’Leary Library', 'McGauvran Student Union', 'Concordia Hall', 'Weed Hall', 'South Side Cafe/Dining Hall', 'Coburn Hall', 'Sheehy Hall', 'Allen House', 'Dugan Hall', 'Mahoney Hall'].each do |c| -%>
+          <%= content_tag(:option, c, value:c) %>
+        <% end %>
+      <% end %>
+      
+      <%= f.label :floor_level %>
+      <%= f.select(:floor_level) do %>
+        <% [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7].each do |c| -%>
+          <%= content_tag(:option, c, value:c) %>
+        <% end %>
+      <% end %>
 
-      <%= f.label :title %>
+      <%= f.label :title, "Title e.g. \"Olsen 1st\" without the quotation" %>
       <%= f.text_field :title, class: 'form-control' %>
       
       <%= f.file_field :picture %>
