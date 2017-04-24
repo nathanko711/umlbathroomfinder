@@ -1,1 +1,13 @@
-<h1>I'm sorry. That floor hasn't been added yet.</h1>
+<div class="container">
+  <h1>We're sorry. That floor hasn't been added to our database yet.</h1>
+  <h2>But here are the list of floors that are currently avaiable.</h2>
+  <%= will_paginate %>
+  <ul class="users">
+    <% @navbar.order(:building, :floor_level).each do |floor| %>
+      <li>
+        <%= link_to floor.title, floor %>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+</div>
