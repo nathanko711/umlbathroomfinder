@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@bathroom) do |f| %>
-        <%= hidden_field_tag :floor_id, @floor.id %>
+        <%= hidden_field_tag :floor_id, @bathroom.floor_id %>
         <%= f.label :title, "Title e.g. \"Olsen 1st Mens Single\" without the quotation"  %>
         <%= f.text_field :title%>
         <%= f.label :coord, "Title e.g. \"123, 123, 451, 123\" without the quotation"  %>
