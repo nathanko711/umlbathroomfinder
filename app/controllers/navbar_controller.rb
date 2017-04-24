@@ -6,6 +6,6 @@ class NavbarController < ApplicationController
     if @floor
       redirect_to @floor
     end
-    
+    @navbar = Floor.all.paginate(page: params[:page])
   end
 end

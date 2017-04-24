@@ -1,32 +1,32 @@
 
 <%= form_tag({controller: "navbar"}, class:"navbar-form navbar-right") do %>
-  
+    <button type="button" class="btn btn-info" onclick="getLocation()">
+      Locate My Building (GPS)
+    </button> 
     <%= select_tag(:selectpicker2, 
     
     options_for_select(
-        Floor.all.uniq.pluck(:building).map {
+        Floor.all.uniq.pluck(:building).sort!.map {
           |building|
           [building, "#{building.downcase.capitalize.delete(?').tr ' ', ?_ }"]          
         }
-      ), {:class => 'selectpicker', "data-container":"body", "data-width" => "100px"}
+      ), {"title":"Building", :class => 'selectpicker', "data-container":"body", "data-width" => "100px"}
       
     ) %>
     
     <%= select_tag(:selectpicker3, 
     
     options_for_select(
-        Floor.all.uniq.pluck(:floor_level).map {
+        Floor.all.uniq.pluck(:floor_level).sort!.map {
           |floor_level|
           ["#{floor_level}" + "F", floor_level]
         }
-      ), {:class => 'selectpicker', "data-container":"body", "data-width" => "100px"}
+      ), {"title":"Floor",:class => 'selectpicker', "data-container":"body", "data-width" => "100px"}
       
     ) %>
 
 
-  <button type="button" class="btn btn-success" onclick="getLocation()">
-    Locate My Building (GPS)
-  </button> 
+  
   <div class="btn-group">
   <%= submit_tag("Find Bathroom", class: "btn btn-success") %>
   </div>
