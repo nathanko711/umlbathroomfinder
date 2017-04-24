@@ -29,6 +29,16 @@ class FloorsController < ApplicationController
     @floor = Floor.friendly.find(params[:id])
   end
   
+  def update
+    @floor = Floor.friendly.find(params[:id])
+    if @floor.update_attributes(floor_params)
+      flash[:success] = "Floor updated"
+      redirect_to @floor
+    else
+      render 'edit'
+    end
+  end
+  
   private
   
     def floor_params
