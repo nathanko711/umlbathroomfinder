@@ -21,3 +21,9 @@ User.create!(name:  "smello",
              password:              "adminpwd",
              password_confirmation: "adminpwd",
                           admin: true)
+                          
+User.create!(name:  "wzhou",
+             email: "wenjin_zhou@uml.edu",
+             password:              "adminpwd",
+             password_confirmation: "adminpwd",
+                          admin: true)

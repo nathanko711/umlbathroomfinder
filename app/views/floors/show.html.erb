@@ -1,70 +1,106 @@
+<div class="container" id="reviewHeader">
+    <div class="col-sm-10 text-right"><%= @floor.title %></div>
+</div>
+<div class="container">
+    <!-- Main component -->
+    <div class="jumbotron">
+        <!-- For Map View -->
+        <div class="text-center">
+            <%= image_tag(@floor.picture.url, class: "img-responsive", usemap: "#"+@floor.title) %>
+            <map name="<%= @floor.title %>">
+            		<% @floor.bathrooms.each do |bathroom| %>
+            			<area alt="<%= bathroom.title %>" title="<%= bathroom.title %>" 
+            							href=<%= bathroom_path(bathroom) %> coords="<%= bathroom.coord %>"
+            							shape="<%= bathroom.shape %>">
+            		<% end %>
+            </map>
+        </div>
+        <!-- RATING -->
+        <table class="table table-bordered">
+            <tr>
+                <th class="bg-info text-center" colspan="3">
+                    RATINGS
+                </th>
+            </tr>
+            <tr>
 
-
-    <div class="container">
-
-    	<!-- Main component -->
-    	<div class="jumbotron">
-		
-			<!-- For Map View -->
-			<div class="text-center">
-			<%= image_tag(@floor.picture.url, class: "img-responsive", usemap: "#olsen1stfloor") %>
-				
-				<map name="olsen1stfloor">
-					<area alt="Womens" title="Womens" href="bathroom.html" coords="1263,338,1437,691" shape="rect">
-					<area alt="Mens" title="Mens" href="bathroom.html" coords="1452,350,1452,681,1657,685,1648,338" shape="poly">
-					<area alt="WomenSingle" title="WomenSingle" href="bathroom.html" coords="2323,792,2420,912" shape="rect">
-					<area alt="MenSingle" title="MenSingle" href="bathroom.html" coords="2433,792,2534,918" shape="rect">
-					<area alt="Single" title="Single" href="bathroom.html" coords="2316,928,2537,1032" shape="rect">
-				</map>
-			</div>
-			
-			<!-- RATING -->
-			<table class="table table-bordered">
-				<tr>
-        			<th class="bg-info text-center" colspan="2">
-        				RATING
-        			</th>
-        		</tr>
-				<tr>
-					<td class="col-sm-6"><u>MEN'S BATHROOM</u>
-						<ul>
-							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI: 
-								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
-								(4/5)
-							</li>
-							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE: 
-								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
-								(5/5)
-							</li>
-						</ul>
-					</td>
-					<td><u>WOMEN'S BATHROOM</u>
-						<ul>
-							<li id="ols1stmult">OLSEN - 1ST FLOOR - MULTI:
-								<span class="ratingstar">&starf;&starf;&starf;&starf;&star;</span>
-								(4/5)
-							</li>
-							<li id="ols1stsing">OLSEN - 1ST FLOOR - SINGLE:
-								<span class="ratingstar">&starf;&starf;&starf;&starf;&starf;</span>
-								(5/5)
-							</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-        			<th class="bg-danger text-center" colspan="2">
-        				STATISTIC
-        			</th>
-        		</tr>
-        		
-        	</table>
-			
-			
-		
-    	</div>
-
-    </div> <!-- /container -->
-    
-		<script>
-			$('img[usemap]').rwdImageMaps();
-		</script>
+                <td class="col-sm-4" style="background-color: #B0FFEB;">
+                    <h4 class="text-center">Mens</h4>
+                    <ul class = "list-group">
+    	            		<% @floor.bathrooms.where(gender: 1).each do |bathroom| %>
+			  								<a class="list-group-item text-center" href=<%= bathroom_path(bathroom) %>>
+			  									<div class="rateit" 
+				            			data-rateit-value="<%= bathroom.reviews.average(:rating) %>" data-rateit-ispreset="true" 
+				            			data-rateit-readonly="true">
+			  									</div></br>
+			  									<%= bathroom.title %>
+			  								</a>
+			            		<% end %>
+										</ul>
+                </td>
+                <td class="col-sm-4" style="background-color: #F6FFF2;">
+                    <h4 class="text-center">Unisex</h4>
+                    <ul class = "list-group">
+    	            		<% @floor.bathrooms.where(gender: 9).each do |bathroom| %>
+			  								<a class="list-group-item text-center" href=<%= bathroom_path(bathroom) %>>
+			  									<div class="rateit" 
+				            			data-rateit-value="<%= bathroom.reviews.average(:rating) %>" data-rateit-ispreset="true" 
+				            			data-rateit-readonly="true">
+			  									</div></br>
+			  									<%= bathroom.title %>
+			  								</a>
+			            		<% end %>
+										</ul>
+                </td>
+                <td class="col-sm-4" style="background-color: #FFB0BE;">
+                    <h4 class="text-center">Womens</h4>
+                    <ul class = "list-group">
+    	            		<% @floor.bathrooms.where(gender: 2).each do |bathroom| %>
+			  								<a class="list-group-item text-center" href=<%= bathroom_path(bathroom) %>>
+			  									<div class="rateit" 
+				            			data-rateit-value="<%= bathroom.reviews.average(:rating) %>" data-rateit-ispreset="true" 
+				            			data-rateit-readonly="true">
+			  									</div></br>
+			  									<%= bathroom.title %>
+			  								</a>
+			            		<% end %>
+										</ul>
+                </td>
+            </tr>
+            <!--<tr>-->
+            <!--    <th class="bg-danger text-center" colspan="3">-->
+            <!--        STATISTICS-->
+            <!--    </th>-->
+            <!--</tr>-->
+        </table>
+    </div>
+</div>
+<!-- /container -->
+<% if logged_in? %>
+<% if current_user.admin? %>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@bathroom) do |f| %>
+        <%= hidden_field_tag :floor_id, @floor.id %>
+        <%= f.label :title, "Title e.g. \"Olsen 1st Mens Single\" without the quotation"  %>
+        <%= f.text_field :title%>
+        <%= f.label :coord, "Title e.g. \"123, 123, 451, 123\" without the quotation"  %>
+        <%= f.text_field :coord %>
+        <%= f.label :shape, "Title e.g. \"rect\" without the quotation"  %>
+        <%= f.text_field :shape%>
+        <%= f.radio_button :gender, 1, checked: true %>
+        <%= label :gender_mens, "Mens" %>
+        <%= f.radio_button :gender, 2, checked: true %>
+        <%= label :gender_womens, "Womens" %>
+        <%= f.radio_button :gender, 9, checked: true %>
+        <%= label :gender_unisex, "Unisex" %>
+        <%= f.file_field :picture %>
+        <%= f.submit "Add new bathroom", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
+<% end %>	
+<% end %>
+<script>
+    $('img[usemap]').rwdImageMaps();
+</script>

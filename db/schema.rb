@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420155025) do
+ActiveRecord::Schema.define(version: 20170422191414) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170420155025) do
     t.string   "shape"
     t.string   "picture"
     t.integer  "floor_id"
+    t.integer  "gender"
     t.index ["floor_id"], name: "index_bathrooms_on_floor_id"
     t.index ["slug"], name: "index_bathrooms_on_slug", unique: true
   end
@@ -29,8 +30,11 @@ ActiveRecord::Schema.define(version: 20170420155025) do
     t.string   "title"
     t.string   "slug"
     t.string   "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "floor_level"
+    t.string   "building"
+    t.string   "campus"
     t.index ["slug"], name: "index_floors_on_slug", unique: true
   end
 
