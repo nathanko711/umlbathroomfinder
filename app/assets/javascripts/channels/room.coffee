@@ -11,7 +11,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       scroll_bottom()
 
 
-$(document).on 'turbolinks:load', ->
+$ ->
   if $('#new_message').length > 0
       submit_message()
       scroll_bottom()
