@@ -4,7 +4,7 @@
     <%= select_tag(:selectpicker2, 
     
     options_for_select(
-        Floor.where(campus: "North").uniq.pluck(:building).map {
+        Floor.all.uniq.pluck(:building).map {
           |building|
           [building, "#{building.downcase.capitalize.delete(?').tr ' ', ?_ }"]          
         }
