@@ -1,3 +1,10 @@
 <div class="container">
-  <h1>404 not found. Sorry. This website was built with Ruby on Rails!</h1>
+  <h2>404 not found. Sorry. But here's an interesting fact or trivia about numbers!</h2>
+  <h3 id="super_number"></h3>
 </div>
+
+<script>
+  $.get(#{"http://numbersapi.com/random/" + ["trivia", "math", "date", "year"]}, function(data) {
+    $('#number').text(data);
+  });
+</script>
