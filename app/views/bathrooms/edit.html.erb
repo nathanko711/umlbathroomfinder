@@ -1,0 +1,26 @@
+<!-- /container -->
+<% if logged_in? %>
+<% if current_user.admin? %>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@bathroom) do |f| %>
+        <%= hidden_field_tag :floor_id, @floor.id %>
+        <%= f.label :title, "Title e.g. \"Olsen 1st Mens Single\" without the quotation"  %>
+        <%= f.text_field :title%>
+        <%= f.label :coord, "Title e.g. \"123, 123, 451, 123\" without the quotation"  %>
+        <%= f.text_field :coord %>
+        <%= f.label :shape, "Title e.g. \"rect\" without the quotation"  %>
+        <%= f.text_field :shape%>
+        <%= f.radio_button :gender, 1, checked: true %>
+        <%= label :gender_mens, "Mens" %>
+        <%= f.radio_button :gender, 2, checked: true %>
+        <%= label :gender_womens, "Womens" %>
+        <%= f.radio_button :gender, 9, checked: true %>
+        <%= label :gender_unisex, "Unisex" %>
+        <%= f.file_field :picture %>
+        <%= f.submit "Edit bathroom", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
+<% end %>	
+<% end %>
