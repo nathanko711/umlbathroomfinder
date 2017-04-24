@@ -373,7 +373,6 @@ DEPENDENCIES
   hirb
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
-  jquery-turbolinks
   kramdown (= 1.12.0)
   listen (= 3.0.8)
   mini_magick (= 4.5.1)

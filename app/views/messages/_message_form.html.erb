@@ -1,6 +1,6 @@
 <div class="message-input">
   <%= form_for(@message, remote: true) do |f| %>
     <%= f.text_area :content %>
-    <%= f.submit "Send" %>
+    <%= f.submit "Send", id:'chat-button' %>
   <% end %>
 </div>
