@@ -14,15 +14,20 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Create New Floor", new_floor_path %></li>
-          <% end %>
           <li class="dropdown">
+            <% if current_user.admin? %>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            ADMIN <b class="caret"></b>
+            <% else %>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Account <b class="caret"></b>
+            <% end %>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+              <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Create New Floor", new_floor_path %></li>
+              <% end %>
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
               <li class="divider"></li>
