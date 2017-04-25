@@ -1,5 +1,5 @@
 class BathroomsController < ApplicationController
-  before_action :admin_user,     only: [:create, :destroy, :edit]
+  before_action :admin_user,     only: [:create, :update, :destroy, :edit]
   
   def show
     @bathroom = Bathroom.friendly.find(params[:id])
@@ -33,6 +33,12 @@ class BathroomsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Bathroom.friendly.find(params[:id]).destroy
+    flash[:success] = "Bathroom deleted"
+    redirect_to(root_url)
   end
   
   private

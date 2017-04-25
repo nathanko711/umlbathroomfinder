@@ -38,6 +38,12 @@ class FloorsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    Floor.friendly.find(params[:id]).destroy
+    flash[:success] = "Floor deleted"
+    redirect_to(root_url)
+  end
   
   private
   

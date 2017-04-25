@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :logged_in_user
   before_action :get_messages
+  before_action :admin_user,     only: [:destroy]
 
   def index
   end
@@ -11,6 +12,12 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast 'room_channel',
                                    message: render_message(message)
     end
+  end
+
+  def destroy
+    Message.find(params[:id]).destroy
+    ActionCable.server.broadcast 'room_channel',
+                                   message: delete_message()
   end
 
   private
@@ -26,5 +33,9 @@ class MessagesController < ApplicationController
 
     def render_message(message)
       render(partial: 'message', locals: { message: message })
+    end
+
+    def delete_message()
+      
     end
 end

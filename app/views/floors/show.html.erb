@@ -8,6 +8,12 @@
         <div class="text-center">
             <%= image_tag(@floor.picture.url, class: "img-responsive", usemap: "#"+@floor.title) %>
             <map name="<%= @floor.title %>">
+            <% if logged_in? %>
+                <% if current_user.admin?%>
+                    <%= link_to "delete", @floor, method: :delete,
+                                              data: { confirm: "You sure?" } %>
+                <% end %>
+            <% end %>
             		<% @floor.bathrooms.each do |bathroom| %>
             			<area alt="<%= bathroom.title %>" title="<%= bathroom.title %>" 
             							href=<%= bathroom_path(bathroom) %> coords="<%= bathroom.coord %>"

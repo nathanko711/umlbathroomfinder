@@ -1,6 +1,9 @@
 <div class="message">
   <div class="message-user">
-    <%= message.user.name %>:
+    <%= link_to message.user.name, message.user %>:
+      <% if current_user.admin? %>
+        <%= link_to "delete", message, method: :delete %>
+                                  <% end %>
   </div>
   <div class="message-content">
     <%= sanitize markdown_to_html(message.content) %>

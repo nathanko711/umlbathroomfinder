@@ -5,6 +5,12 @@
   <div class="row center-block">
     <div class="col-sm-6">Avg rating: <%= @bathroom.reviews.average(:rating) %></div>
     <div class="col-sm-6 text-right"><%= @bathroom.title %></div>
+                <% if logged_in? %>
+                <% if current_user.admin?%>
+                    <%= link_to "delete", @bathroom, method: :delete,
+                                              data: { confirm: "You sure?" } %>
+                <% end %>
+            <% end %>
   </div>
 </div>
 <div class="container" id="imageContainer">
