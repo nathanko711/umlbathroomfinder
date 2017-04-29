@@ -50,7 +50,8 @@
 </div>
 <!-- Function to select the campus and building when an image map area is clicked. -->
 <script>
-   function makeSelection(p2, o2){
+   function makeSelection(p1, o1, p2, o2){
+       $(p1).selectpicker('val', o1);
        $(p2).selectpicker('val', o2);
    }
     $('img[usemap]').rwdImageMaps();
