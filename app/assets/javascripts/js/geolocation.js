@@ -419,71 +419,71 @@ function showPosition(position) {
     }
     
     if (inside_olsen(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Olsen';
+         o2 = 'Olsen_hall';
          found = 1;
     }
     else if (inside_ball(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Ball';
+         o2 = 'Ball_hall';
          found = 1;
     }
     else if (inside_costello(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Costello';
+         o2 = 'Costello_gym';
          found = 1;
     }
     else if (inside_olney(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Olney';
+         o2 = 'Olney_hall';
          found = 1;
     }
     else if (inside_perry(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Engineering';
+         o2 = 'Engineering_building';
          found = 1;
     }
     else if (inside_cumnock(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Cumnock';
+         o2 = 'Cumnock_hall';
          found = 1;
     }
     else if (inside_kitson(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Kitson';
+         o2 = 'Kitson_hall';
          found = 1;
     }
     else if (inside_southwick(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Southwick';
+         o2 = 'Southwick_hall';
          found = 1;
     }
     else if (inside_pasteur(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Pasteur';
+         o2 = 'Pasteur_hall';
          found = 1;
     }
     else if (inside_falmouth(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Falmouth';
+         o2 = 'Falmouth_hall';
          found = 1;
     }
     else if (inside_pinanski(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Pinanski';
+         o2 = 'Pinanski_hall';
          found = 1;
     }
     else if (inside_lydon(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Lydon';
+         o2 = 'Lydon_library';
          found = 1;
     }
     else if (inside_eames(position.coords.latitude, position.coords.longitude)){
-         o2 = 'Eames';
+         o2 = 'Eames_hall';
          found = 1;
     }
     else if (inside_emerging(position.coords.latitude, position.coords.longitude)){
-         o2 = 'EmergingTechnologies';
+         o2 = 'Etic';
          found = 1;
     }
     else if (inside_dugan(position.coords.latitude, position.coords.longitude)){
-        o2 = 'Dugan';
+        o2 = 'Dugan_hall';
         found = 1;
     }
     else if (inside_durgin(position.coords.latitude, position.coords.longitude)){
-        o2 = 'Durgin';
+        o2 = 'Durgin_hall';
         found = 1;
     }
     else if (inside_hss(position.coords.latitude, position.coords.longitude)){
-        o2 = 'Health';
+        o2 = 'Health_and_social_sciences_building';
         found = 1;
     }
     else{
