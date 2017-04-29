@@ -9,6 +9,7 @@
                 <% if current_user.admin?%>
                     <%= link_to "delete", @bathroom, method: :delete,
                                               data: { confirm: "You sure?" } %>
+                    <%= link_to "edit", edit_bathroom_path(@bathroom) %>
                 <% end %>
             <% end %>
   </div>

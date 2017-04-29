@@ -12,6 +12,7 @@
                 <% if current_user.admin?%>
                     <%= link_to "delete", @floor, method: :delete,
                                               data: { confirm: "You sure?" } %>
+                    <%= link_to "edit", edit_floor_path(@floor) %>
                 <% end %>
             <% end %>
             		<% @floor.bathrooms.each do |bathroom| %>
