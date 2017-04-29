@@ -1,5 +1,5 @@
 class Floor < ApplicationRecord
-  has_many :bathrooms
+  has_many :bathrooms, dependent: :destroy
   mount_uploader  :picture, PictureUploader
   validates :title, presence: true
   extend FriendlyId
