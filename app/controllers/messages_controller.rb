@@ -16,8 +16,7 @@ class MessagesController < ApplicationController
 
   def destroy
     Message.find(params[:id]).destroy
-    ActionCable.server.broadcast 'room_channel',
-                                   message: delete_message()
+    redirect_back(fallback_location: chat_path)
   end
 
   private
