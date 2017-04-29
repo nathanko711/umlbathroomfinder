@@ -1,24 +1,48 @@
-# README
+# UML Bathroom Finder
+##https://umlbathroomfinder.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This is a project made during Spring 2017 for GUI II class at UML with Prof. Wenjin Zhou
 
-Things you may want to cover:
+### The contributors are Nathan Ko, Scott Mello, Jacob Rothmel, and Chuong Vu
 
-* Ruby version
+The main features of this web application was to:
 
-* System dependencies
+* Enable students at UML to find the nearest bathrooms easily
 
-* Configuration
+* Make creating / deleting of new buildings / floors / bathroom accessible through the browser
 
-* Database creation
+* Enable an easy way for Admins to delete / manage users and their reviews
 
-* Database initialization
+* Write reviews for bathrooms
 
-* How to run the test suite
+* And see the average ratings of bathrooms
 
-* Services (job queues, cache servers, search engines, etc.)
+* Real time chat
 
-* Deployment instructions
+* Built using Ruby on Rails
 
-* ....
+* And represents hundreds of hours of our hard work... learning Ruby then Rails!
+
+
+Installation / Running it Locally
+-------------
+
+#### 1. Make sure Ruby is installed on your system. Open command prompt and type `ruby -v` to check which version.
+
+#### 2. Make sure Rails is installed too. Type `rails -v` to check which version.
+
+#### 3. Clone our git repository
+
+`git clone https://github.com/nathanko711/umlbathroomfinder`
+
+#### 4. Install all dependencies. If error message about an older bundler comes up, run `bundle update` before running `bundle install`
+
+`bundle install`
+
+#### 5. Migrate the database
+
+`rails db:migrate`
+
+#### 6. Run the server then navigate to your localhost.
+
+`rails server`
