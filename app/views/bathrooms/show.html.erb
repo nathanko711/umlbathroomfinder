@@ -24,6 +24,7 @@
       <% if logged_in? %>
           <%= form_for(@review, :html => {:class => "form-horizontal", 
             :novalidate => "novalidate" }) do |f| %>
+          <%= render 'shared/review_error_messages' %>
           <%= hidden_field_tag :bathroom_id, @bathroom.id %>
           <div class="form-group">
             <label for="your_rating" class="col-sm-2 control-label">Your Rating:</label><br>

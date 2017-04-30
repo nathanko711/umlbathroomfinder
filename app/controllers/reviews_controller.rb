@@ -8,7 +8,9 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to request.referrer, :flash => { :success => "Your review has been submitted. Thanks!" }
     else
-      redirect_to request.referrer, :flash => { :danger => "Please make sure form is valid" }
+      redirect_to request.referrer, :flash => { 
+        :danger => "Please check your review form. " + @review.errors.full_messages.join(" & ") + "."
+      }
     end
   end
   
