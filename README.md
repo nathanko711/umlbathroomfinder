@@ -9,7 +9,7 @@ The main features of this web application was to:
 
 * Enable students at UML to find the nearest bathrooms easily
 
-* Utilize Google maps API to easily locate the building the User is in.
+* Utilize Google maps API to easily locate the building the User is in
 
 * Make creating / deleting of new buildings / floors / bathroom accessible through the browser
 
