@@ -1,5 +1,5 @@
 # UML Bathroom Finder
-##https://umlbathroomfinder.herokuapp.com/
+https://umlbathroomfinder.herokuapp.com/
 
 ### This is a project made during Spring 2017 for GUI II class at UML with Prof. Wenjin Zhou
 
